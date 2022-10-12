@@ -1,0 +1,96 @@
+.hidden
+  display: none !important
+
+.table-resizable
+  table-layout: fixed
+
+  th
+    position: relative
+    white-space: nowrap
+    user-select: none
+    overflow: hidden
+
+    &:hover
+      .resize-handle
+        opacity: 1
+
+  .resize-handle
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    width: 5px
+    background-color: rgba(#fff, 0.3)
+    transform: translateX(50%)
+    z-index: 1
+    cursor: ew-resize
+    opacity: 0
+
+    &:hover
+      .resize-handle
+        opacity: 1
+
+.headers-menu
+  position: absolute
+  background-color: #363839
+  padding: 8px
+  max-height: 200px
+  overflow-y: scroll
+  z-index: 100
+
+  &::-webkit-scrollbar
+    width: 3px
+
+  &::-webkit-scrollbar-thumb
+    background-color: rgba(#fff, 0.3)
+
+  li
+    list-style: none
+
+  label
+    position: relative
+    display: block
+    align-items: center
+    font-size: 12px
+    color: rgba(255, 255, 255, 0.7)
+    padding-left: 16px
+    text-transform: capitalize
+    cursor: pointer
+
+    &:hover input ~ .checkmark
+      background-color: #ccc
+
+    input:checked ~ .checkmark
+      background-color: #786088
+
+      &:after
+        display: block
+
+  input
+    position: absolute
+    opacity: 0
+    cursor: pointer
+    height: 0
+    width: 0
+
+  .checkmark
+    position: absolute
+    top: 2px
+    left: 0
+    height: 12px
+    width: 12px
+    border-radius: 2px
+    background-color: #eee
+    transform: rotate(0)
+
+    &:after
+      content: ''
+      position: absolute
+      display: none
+      left: 4px
+      top: 0px
+      width: 5px
+      height: 10px
+      border: solid white
+      border-width: 0 2px 2px 0
+      transform: rotate(45deg)
