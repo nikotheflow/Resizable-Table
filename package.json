@@ -1,0 +1,31 @@
+{
+  "name": "resizable-table",
+  "version": "1.0.0",
+  "description": "Package for make table columns resizable and hidden.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikotheflow/Resizable-Table.git"
+  },
+  "keywords": ["table", "columns", "resizable", "hidden"],
+  "author": "nikotheflow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikotheflow/Resizable-Table/issues"
+  },
+  "homepage": "https://github.com/nikotheflow/Resizable-Table#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.8.4"
+  },
+   "files": ["lib/**/*"]
+}
