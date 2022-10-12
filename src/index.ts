@@ -1,4 +1,4 @@
-function initCustomTable(table: HTMLTableElement) {
+export function initCustomTable(table: HTMLTableElement) {
   const tableRow = table.querySelector('tr');
   const tableRowCells = tableRow?.querySelectorAll('th');
 
@@ -12,5 +12,3 @@ function initCustomTable(table: HTMLTableElement) {
     };
   });
 };
-
-module.exports = {initCustomTable};
