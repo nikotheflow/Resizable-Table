@@ -1,6 +1,6 @@
 {
   "name": "resizable-table",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Package for make table columns resizable and hidden.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
