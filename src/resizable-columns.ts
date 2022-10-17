@@ -158,7 +158,7 @@ function getMinTableWidth(table: HTMLTableElement) {
 	const fixedColumnWidthsSum = fixedColumns.reduce((acc, column) => acc + column.clientWidth, 0);
 
 	const resizableColumns = visibleColumns.filter(column => column.dataset.autoResizable === 'true');
-	const resizableColumnMinWidthsSum = resizableColumns.reduce((acc, column) => acc + parseFloat(column.dataset.minWidth!), 0);
+	const resizableColumnMinWidthsSum = resizableColumns.reduce((acc, column) => acc + parseFloat(column.dataset.minWidth!), 0); // TODO:
 
 	return fixedColumnWidthsSum + resizableColumnMinWidthsSum;
 }
@@ -218,9 +218,9 @@ export function setColumnWidths(table: HTMLTableElement, tableProperties: TTable
 function createResizeHandlers(table: HTMLTableElement) {
 	const columns = getTableColumns(table);
 	columns.forEach((column, index) => {
-		const isNotLast = index < columns.length - 1;
+		const isLast = index === columns.length - 1;
 
-		if (isNotLast) {
+		if (!isLast) {
 			appendResizeHandle(column);
 		}
 	});
@@ -266,6 +266,6 @@ export function getColumnRatioFromWidth(columnWidth: number, tableWidth: number)
 	return roundTo(columnWidth / tableWidth * 100, 10);
 }
 
-export function roundTo(number: number, precision: number) {
+function roundTo(number: number, precision: number) {
 	return parseFloat(number.toFixed(precision));
 }

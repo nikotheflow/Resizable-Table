@@ -102,7 +102,11 @@ function setDataAttributesToCells(table: HTMLTableElement) {
 		cell.setAttribute('data-id', columnId);
 		cell.setAttribute('data-shown', 'true');
 	})
+
+	cells.forEach((cell, index) => cell.setAttribute('data-id', (index % 7).toString()))
 }
+
+
 
 function setDataShownToHiddenCells(table: HTMLTableElement) {
 	const hiddenColumnIds = getHiddenColumnIds(table);
